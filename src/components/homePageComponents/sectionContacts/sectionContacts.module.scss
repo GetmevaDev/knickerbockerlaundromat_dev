@@ -41,6 +41,9 @@
     flex-direction: column;
     flex-basis: (1177.99px / 3) - 120px;
     align-items: flex-start;
+    @include mediaWidth_900{
+      align-items: center;
+    }
     .contact-card_icon{
       width: 72px;
       height: 72px;
