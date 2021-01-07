@@ -1,0 +1,37 @@
+@import "./src/scss/utils/vars";
+@import "src/scss/utils/mixins";
+
+
+.circle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  background: #43C0E4;
+  margin: 0 auto;
+  img{
+    max-width: 45px;
+    max-height: 45px;
+  }
+
+}
+.img-arrow{
+  max-width: 45px !important;
+  margin-bottom: 20px;
+  @include mediaWidth_992{
+   transform: rotate(90deg);
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+.adaptive-blocks{
+  @include mediaWidth_992{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  }
+}

@@ -1,0 +1,28 @@
+@import "./src/scss/utils/vars";
+@import "./src/scss/utils/mixins";
+
+.SocialMedia{
+  @include mediaWidth_767{
+    margin-top: 20px;
+  }
+  display: flex;
+  li:not(:last-child){
+    margin-right: 42px;
+  }
+  a{
+    font-size: 20px;
+    span{
+      color: #4B4B4C;
+      transition: .3s;
+
+    }
+    &:hover{
+      span{
+        transition: .3s;
+
+        color: #43C0E4;
+      }
+
+    }
+  }
+}

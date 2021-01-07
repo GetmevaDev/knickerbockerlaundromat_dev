@@ -11,38 +11,48 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
+  const data = useStaticQuery(
     graphql`
       query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
+          strapiDescriptionSite {
+              Title
+              Description
+              Image {
+                  childImageSharp {
+                      fixed(width: 300) {
+                          ...GatsbyImageSharpFixed
+                      }
+                  }
+              }
           }
-        }
       }
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  const metaDescription = description || data.strapiDescriptionSite.Description
+  const defaultTitle = data.strapiDescriptionSite.Title
+  const imageData = data.strapiDescriptionSite.Image && data.strapiDescriptionSite.Image !== null ?
+    data.strapiDescriptionSite.Image.childImageSharp.fixed.src : "";
 
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      title={defaultTitle}
+      titleTemplate={defaultTitle ? `%s | ${metaDescription}` : null}
       meta={[
         {
           name: `description`,
           content: metaDescription,
         },
         {
+          property: `og:image`,
+          content: imageData,
+        },
+        {
           property: `og:title`,
-          content: title,
+          content: defaultTitle,
         },
         {
           property: `og:description`,
@@ -57,12 +67,12 @@ function SEO({ description, lang, meta, title }) {
           content: `summary`,
         },
         {
-          name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``,
+          image: `twitter:image`,
+          content: imageData,
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: defaultTitle,
         },
         {
           name: `twitter:description`,

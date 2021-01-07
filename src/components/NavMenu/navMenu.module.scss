@@ -1,0 +1,60 @@
+@import "./src/scss/utils/vars";
+@import "./src/scss/utils/mixins";
+
+
+.menuItems{
+  display: flex;
+  align-items: center;
+  @include mediaWidth_900{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    background: #fff;
+    flex-direction: column;
+    opacity: 0;
+    justify-content: center;
+transition: .5s;
+    transform: translateX(-100%);
+
+    li{
+      margin-left: 0 !important;
+    }
+  }
+}
+.activeMenu{
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.linkItem{
+  color: #4B4B4C;
+  font-family: $mainFont;
+  line-height: 34px;
+  &:not(:first-child){
+    margin-left: 33.5px;
+  }
+  a{
+    transition: .3s;
+    color: #4B4B4C;
+    &:hover{
+      color: #43C0E4;
+
+    }
+  }
+}
+
+
+.buttonMenu{
+  display: none;
+  margin-right: 20px;
+  width: 60px;
+  background: transparent;
+  z-index: 1001;
+  img{
+    width: 50%;
+  }
+  @include mediaWidth_900{
+    display: block;
+  }
+}

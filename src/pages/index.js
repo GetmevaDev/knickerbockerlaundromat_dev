@@ -1,22 +1,30 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import SectionHeader from "../components/homePageComponents/sectionHeader/SectionHeader"
+import SectionContacts from "../components/homePageComponents/sectionContacts/SectionContacts"
+import SectionOffer from "../components/homePageComponents/sectionOffers/SectionOffers"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
+
+
+import "../scss/main.scss"
+import EquipmentSection from "../components/homePageComponents/equipmentSection/EquipmentSection"
+
+const IndexPage = () => {
+
+    return(
+        <Layout>
+            <SEO />
+            <SectionHeader />
+            <SectionContacts />
+            <SectionOffer />
+            <EquipmentSection />
+        </Layout>
+      )
+
+}
 
 export default IndexPage

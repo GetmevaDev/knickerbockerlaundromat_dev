@@ -1,0 +1,43 @@
+@import "./src/scss/utils/vars";
+@import "src/scss/utils/mixins";
+
+.section-cycle{
+  h2{
+    margin-bottom: 10px !important;
+  }
+
+}
+
+.after-title{
+  text-align: center;
+}
+
+.card-cycle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 175px;
+  height: 175px;
+  background: #2676BC;
+  border-radius: 50%;
+  margin-bottom: 26px;
+}
+
+.img-arrow{
+  margin-bottom: 40px;
+}
+span{
+  display: block;
+  text-align: center;
+  color: #4B4B4C;
+}
+.adaptive-block{
+  @include mediaWidth_900{
+    flex-direction: column;
+
+    .img-arrow{
+      transform: rotate(90deg);
+      margin: 37px 0;
+    }
+  }
+}

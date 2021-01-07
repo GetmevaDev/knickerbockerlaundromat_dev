@@ -1,0 +1,56 @@
+@import "./src/scss/utils/vars";
+@import "./src/scss/utils/mixins";
+
+
+.section-header_DropOffService{
+  padding: 0;
+  width: 100%;
+  height: calc(100vh - 114px);
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position-x: 29% !important;
+  @include mediaWidth_992{
+    height: 100vh;
+  }
+  &::before{
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: calc(100vh - 114px);
+    background: #00000036;
+    @include mediaWidth_992{
+      height: 100vh;
+    }
+  }
+  .w900{
+    top: 60%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+  h2{
+    max-width: 900px;
+    font-family: $headingFonts;
+    font-size: 70px;
+    line-height: 63px;
+    color: #fff;
+    @include mediaWidth_624{
+      font-size: 8vw;
+      line-height: 7vw;
+      margin-top: -4em;
+    }
+  }
+  h4{
+    max-width: 900px;
+    font-size: 40px;
+    line-height: 32px;
+    color: #fff;
+    @include mediaWidth_624{
+      font-size: 8vw;
+      line-height: 7vw;
+    }
+  }
+}

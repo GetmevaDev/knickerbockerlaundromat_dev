@@ -1,0 +1,42 @@
+@import "./src/scss/utils/vars";
+@import "./src/scss/utils/mixins";
+
+.section-slider{
+  padding: 0;
+  .block-slide{
+    max-width: 100%;
+    height: 100%;
+    min-height: 230px;
+    &::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      width: 100%;
+      min-height: 100%;
+      background: #000;
+      opacity: 0.5;
+      z-index: 10;
+    }
+     img{
+       width: 100%;
+       height: 65vh;
+
+     }
+    .title-slider{
+      max-width: 850px;
+      color: #fff;
+      position: absolute;
+      font-family: $headingFonts;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      z-index: 11;
+      font-size: 3vmax;
+      line-height: 3vmax;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}

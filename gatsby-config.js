@@ -6,6 +6,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -15,6 +16,37 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-source-strapi`,
+      options: {
+        apiURL: process.env.DEPLOY_URL
+          ? 'https://cms-knick.herokuapp.com'
+          : 'http://localhost:1337',
+        queryLimit: 1000, // Default to 100
+        contentTypes: [
+          `users`,
+          `offers`,
+          `equipments`,
+          `advantages`,
+        ],
+        //If using single types place them in this array.
+        singleTypes: [
+          `home-page`,
+          `navigation-menu`,
+          `contacts-and-location`,
+          `social-media`,
+          `self-service-page`,
+          `drop-off-service`,
+          `description-site`,
+        ],
+        // Possibility to login with a strapi user, when content types are not publically available (optional).
+        loginData: {
+          identifier: "",
+          password: "",
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

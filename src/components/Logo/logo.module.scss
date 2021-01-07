@@ -1,0 +1,17 @@
+@import "./src/scss/utils/mixins";
+
+.logoLink{
+  display: flex;
+  align-items: center;
+  max-width: 231px;
+  z-index: 1001;
+  @include mediaWidth_900{
+    margin-left: 20px;
+    picture{
+      img{
+        width: 83% !important;
+        height: 83% !important;
+      }
+    }
+  }
+}
