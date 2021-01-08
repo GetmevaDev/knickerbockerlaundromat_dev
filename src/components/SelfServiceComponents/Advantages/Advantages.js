@@ -45,14 +45,14 @@ const Advantages = () =>{
             return(
               <div data-aos="fade-up" className={`${i % 2 === 1 ? "row-reverse" : " "} ${classes.blockAdvantage}`}>
                   <div className={classes.img}>
-                      {/*<Img*/}
-                      {/*  fixed={block.node.Image && block.node.Image !== null ?*/}
-                      {/*    block.node.Image.childImageSharp.fixed : null}*/}
-                      {/*/>*/}
-                    <img src={
-                      block.node.Image && block.node.Image !== null ?
-                      block.node.Image.childImageSharp.fixed.src : null
-                    } alt="" />
+                      <Img
+                        fixed={block.node.Image && block.node.Image !== null ?
+                          block.node.Image.childImageSharp.fixed : null}
+                      />
+                    {/*<img src={*/}
+                    {/*  block.node.Image && block.node.Image !== null ?*/}
+                    {/*  block.node.Image.childImageSharp.fixed.src : null*/}
+                    {/*} alt="" />*/}
                   </div>
                 <div className={classes.blockText}>
                   <h3>{block.node.Title && block.node.Title !== null ?
