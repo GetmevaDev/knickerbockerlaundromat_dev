@@ -47,7 +47,8 @@ class NavMenu extends React.Component{
               data.strapiNavigationMenu.Menu.map(itemPage => (
                 <li className={classes.linkItem}>
                   <Link activeStyle={{
-                    color: `#43C0E4`
+                    color: `#43C0E4`,
+                    fontWeight: 700,
                   }} to={itemPage.Link}>{itemPage.Name_Page}</Link>
                 </li>
               ))
