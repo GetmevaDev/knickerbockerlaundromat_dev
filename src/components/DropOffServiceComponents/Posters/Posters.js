@@ -1,5 +1,7 @@
 import React from "react"
 import {graphql, useStaticQuery} from "gatsby"
+import BackgroundImage from "gatsby-background-image"
+
 import Title from "../../title"
 import classes from "./posters.module.scss"
 
@@ -25,8 +27,8 @@ const Posters = () => {
                   id
                   Image {
                       childImageSharp {
-                          fixed(width: 1000){
-                              ...GatsbyImageSharpFixed
+                          fluid(maxWidth: 3000){
+                              ...GatsbyImageSharpFluid
                           }
                       }
                   }
@@ -48,14 +50,21 @@ const Posters = () => {
               <Title
               title={item.Title}
               />
-              <div className={classes.blockPoster} style={{
-                background: `url("${item.Image && item.Image !== null ?
-                  item.Image.childImageSharp.fixed.src : null
-                }")`
-              }}>
+              <BackgroundImage
+                Tag="div"
+                className={classes.blockPoster}
+                fluid={item.Image && item.Image !== null ?
+                  item.Image.childImageSharp.fluid : null}
+              >
+              {/*<div className={classes.blockPoster} style={{*/}
+              {/*  background: `url("${item.Image && item.Image !== null ?*/}
+              {/*    item.Image.childImageSharp.fixed.src : null*/}
+              {/*  }")`*/}
+              {/*}}>*/}
                 {item.Title_inside_poster && item.Title_inside_poster !== null ? (<h3 style={{color: `#${item.Color_title_inside_poster}`}}>{item.Title_inside_poster}</h3>) : null}
                 {item.Text && item.Text !== null ? (<p style={{fontSize: `${item.Font_size_text}px`}}>{item.Text}</p>) : null}
-              </div>
+              {/*</div>*/}
+              </BackgroundImage>
             </div>
           ))
         }

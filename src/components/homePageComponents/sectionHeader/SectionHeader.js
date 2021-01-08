@@ -15,8 +15,8 @@ const SectionHeader = () => {
                   Subtitle
                   Background_SectionHeader {
                       childImageSharp {
-                          fixed(width: 3000){
-                              ...GatsbyImageSharpFixed
+                          fluid(maxWidth: 3000){
+                              ...GatsbyImageSharpFluid
                           }
                       }
                   }
@@ -29,13 +29,15 @@ const SectionHeader = () => {
     <>
 
 
+      <BackgroundImage
+        Tag="section"
+        className={classes.sectionHeader}
+        fluid={data.strapiHomePage.Background_SectionHeader && data.strapiHomePage.Background_SectionHeader !== null ?
+          data.strapiHomePage.Background_SectionHeader.childImageSharp.fluid :
+          null}
+        backgroundColor={`#2f89f3`}
+      >
 
-        <section className={classes.sectionHeader} style={{
-        padding: 0,
-          background: `url("${data.strapiHomePage.Background_SectionHeader && data.strapiHomePage.Background_SectionHeader !== null ?
-            data.strapiHomePage.Background_SectionHeader.childImageSharp.fixed.src :
-                 null}")`
-        }}>
           <div className={`container ${classes.row}`}>
 
               {data.strapiHomePage.Pretitle && data.strapiHomePage.Pretitle !== null ? (<h3>{data.strapiHomePage.Pretitle}</h3>) : null}
@@ -45,7 +47,7 @@ const SectionHeader = () => {
 
           </div>
 
-        </section>
+      </BackgroundImage>
 
 
 

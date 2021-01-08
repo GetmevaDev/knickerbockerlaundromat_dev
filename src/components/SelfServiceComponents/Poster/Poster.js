@@ -1,5 +1,6 @@
 import React from "react"
 import {graphql, useStaticQuery} from "gatsby"
+import BackgroundImage from "gatsby-background-image"
 import classes from "./poster.module.scss"
 import { useEffect } from "react"
 import Aos from "aos"
@@ -17,8 +18,8 @@ const Poster = () =>{
               Question
               Poster_img {
                   childImageSharp {
-                      fixed(width: 1000){
-                          ...GatsbyImageSharpFixed
+                      fluid(maxWidth: 3000){
+                          ...GatsbyImageSharpFluid
                       }
                   }
               }
@@ -31,11 +32,20 @@ const Poster = () =>{
       paddingTop: 44,
       paddingBottom: 0
     }}>
-      <div data-aos="fade-up" className={`container row ${classes.posterBlock}`}  style={{
-        background: `url("${data.strapiSelfServicePage.Poster_img && data.strapiSelfServicePage.Poster_img ?
-          data.strapiSelfServicePage.Poster_img.childImageSharp.fixed.src : null
-        }")`
-      }}>
+      <div className="container" data-aos="fade-up">
+
+        <BackgroundImage
+          Tag="div"
+          className={classes.posterBlock}
+          fluid={data.strapiSelfServicePage.Poster_img && data.strapiSelfServicePage.Poster_img ?
+            data.strapiSelfServicePage.Poster_img.childImageSharp.fluid : null}
+          backgroundColor={`#2c77f1`}
+        >
+      {/*<div  className={`row ${classes.posterBlock}`}  style={{*/}
+      {/*  background: `url("${data.strapiSelfServicePage.Poster_img && data.strapiSelfServicePage.Poster_img ?*/}
+      {/*    data.strapiSelfServicePage.Poster_img.childImageSharp.fixed.src : null*/}
+      {/*  }")`*/}
+      {/*}}>*/}
         <h2>{data.strapiSelfServicePage.Title_poster && data.strapiSelfServicePage.Title_poster ?
           data.strapiSelfServicePage.Title_poster : null
         }</h2>
@@ -45,6 +55,8 @@ const Poster = () =>{
         <h3>{data.strapiSelfServicePage.Answer && data.strapiSelfServicePage.Answer ?
           data.strapiSelfServicePage.Answer : null
         }</h3>
+      {/*</div>*/}
+        </BackgroundImage>
       </div>
     </section>
   )

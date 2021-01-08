@@ -1,5 +1,6 @@
 import React from "react"
 import {graphql, useStaticQuery} from "gatsby"
+import BackgroundImage from "gatsby-background-image"
 
 import classes from "./dropOffServiceSectionHeader.module.scss"
 
@@ -13,8 +14,8 @@ const DropOffServiceSectionHeader = () =>{
               Subtitle
               Background_Section_Header {
                   childImageSharp {
-                      fixed(width: 3000){
-                          ...GatsbyImageSharpFixed
+                      fluid(maxWidth: 3000){
+                          ...GatsbyImageSharpFluid
                       }
                   }
               }
@@ -23,13 +24,16 @@ const DropOffServiceSectionHeader = () =>{
   `)
 
   return(
-    <section className={classes.sectionHeader_DropOffService}  style={{
-      background: `url("${data.strapiDropOffService.Background_Section_Header &&
+    <BackgroundImage
+      Tag="section"
+      className={classes.sectionHeader_DropOffService}
+      fluid={data.strapiDropOffService.Background_Section_Header &&
       data.strapiDropOffService.Background_Section_Header !== null ?
-        data.strapiDropOffService.Background_Section_Header.childImageSharp.fixed.src :
-        null
-      }")`
-    }}>
+        data.strapiDropOffService.Background_Section_Header.childImageSharp.fluid :
+        null}
+      backgroundColor={`#3b4854`}
+    >
+
       <div className={`container ${classes.w900}`}>
         <h2>{data.strapiDropOffService.Title && data.strapiDropOffService.Title !== null ?
           data.strapiDropOffService.Title : null
@@ -41,7 +45,8 @@ const DropOffServiceSectionHeader = () =>{
 
 
 
-    </section>
+
+      </BackgroundImage>
   )
 }
 

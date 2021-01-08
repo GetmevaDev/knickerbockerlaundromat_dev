@@ -1,7 +1,7 @@
 import React from "react"
 import {graphql, useStaticQuery} from "gatsby"
 import Title from "../../title"
-
+import Img from "gatsby-image"
 import { useEffect } from "react"
 import Aos from "aos"
 import "aos/dist/aos.css"
@@ -45,10 +45,14 @@ const Advantages = () =>{
             return(
               <div data-aos="fade-up" className={`${i % 2 === 1 ? "row-reverse" : " "} ${classes.blockAdvantage}`}>
                   <div className={classes.img}>
-                    <img src={
-                      block.node.Image && block.node.Image !== null ?
-                      block.node.Image.childImageSharp.fixed.src : null
-                    } alt="" />
+                      <Img
+                        fixed={block.node.Image && block.node.Image !== null ?
+                          block.node.Image.childImageSharp.fixed : null}
+                      />
+                    {/*<img src={*/}
+                    {/*  block.node.Image && block.node.Image !== null ?*/}
+                    {/*  block.node.Image.childImageSharp.fixed.src : null*/}
+                    {/*} alt="" />*/}
                   </div>
                 <div className={classes.blockText}>
                   <h3>{block.node.Title && block.node.Title !== null ?
