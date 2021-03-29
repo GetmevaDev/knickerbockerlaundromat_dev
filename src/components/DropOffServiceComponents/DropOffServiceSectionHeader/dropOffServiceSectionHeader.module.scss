@@ -31,6 +31,9 @@
     justify-content: flex-end;
     align-items: flex-start;
   }
+  h2,h4{
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+  }
   h2{
     max-width: 900px;
     font-family: $headingFonts;
