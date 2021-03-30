@@ -13,27 +13,18 @@ const DropOffServiceSectionHeader = () =>{
               Title
               Subtitle
               Background_Section_Header {
-                  childImageSharp {
-                      fluid(maxWidth: 3000){
-                          ...GatsbyImageSharpFluid
-                      }
-                  }
+                  alternativeText
+                  url
               }
           }
       }
   `)
 
   return(
-    <BackgroundImage
-      Tag="section"
-      className={classes.sectionHeader_DropOffService}
-      fluid={data.strapiDropOffService.Background_Section_Header &&
-      data.strapiDropOffService.Background_Section_Header !== null ?
-        data.strapiDropOffService.Background_Section_Header.childImageSharp.fluid :
-        null}
-      backgroundColor={`#3b4854`}
-    >
-
+    <section className={classes.sectionHeader_DropOffService} style={{
+      background: `#3b4854 url("${data.strapiDropOffService.Background_Section_Header[0].url}")`,
+    }}>
+      {console.log(data.strapiDropOffService.Background_Section_Header)}
       <div className={`container ${classes.w900}`}>
         <h2>{data.strapiDropOffService.Title && data.strapiDropOffService.Title !== null ?
           data.strapiDropOffService.Title : null
@@ -42,11 +33,7 @@ const DropOffServiceSectionHeader = () =>{
           data.strapiDropOffService.Subtitle : null
         }</h4>
       </div>
-
-
-
-
-      </BackgroundImage>
+    </section>
   )
 }
 
