@@ -26,11 +26,8 @@ const Posters = () => {
                   Color_title_inside_poster
                   id
                   Image {
-                      childImageSharp {
-                          fluid(maxWidth: 3000){
-                              ...GatsbyImageSharpFluid
-                          }
-                      }
+                      alternativeText
+                      url
                   }
               }
           }
@@ -50,21 +47,19 @@ const Posters = () => {
               <Title
               title={item.Title}
               />
-              <BackgroundImage
-                Tag="div"
-                className={classes.blockPoster}
-                fluid={item.Image && item.Image !== null ?
-                  item.Image.childImageSharp.fluid : null}
-              >
-              {/*<div className={classes.blockPoster} style={{*/}
-              {/*  background: `url("${item.Image && item.Image !== null ?*/}
-              {/*    item.Image.childImageSharp.fixed.src : null*/}
-              {/*  }")`*/}
-              {/*}}>*/}
-                {item.Title_inside_poster && item.Title_inside_poster !== null ? (<h3 style={{color: `#${item.Color_title_inside_poster}`}}>{item.Title_inside_poster}</h3>) : null}
-                {item.Text && item.Text !== null ? (<p style={{fontSize: `${item.Font_size_text}px`}}>{item.Text}</p>) : null}
-              {/*</div>*/}
-              </BackgroundImage>
+              <div className={classes.blockPoster} style={{
+                background: `url("${item.Image && item.Image !== null ?
+                  item.Image[0].url : null
+                }")`
+              }}>
+                {item.Title_inside_poster && item.Title_inside_poster !== null ?
+                  (<h3 style={{color: `#${item.Color_title_inside_poster}`}}>{item.Title_inside_poster}</h3>) :
+                  null}
+                {item.Text && item.Text !== null ?
+                  (<p style={{fontSize: `${item.Font_size_text}px`}}>{item.Text}</p>) :
+                  null}
+              </div>
+
             </div>
           ))
         }

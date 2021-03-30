@@ -19,11 +19,8 @@ const Reason = () => {
                   Title
                   Subtitle
                   Image {
-                      childImageSharp {
-                          fluid(maxWidth: 3000){
-                              ...GatsbyImageSharpFluid
-                          }
-                      }
+                      alternativeText
+                      url
                   }
               }
           }
@@ -38,26 +35,27 @@ const Reason = () => {
       title={`Why You Should Wash With Us`}
       />
       <div className="container" data-aos="fade-up">
-        <BackgroundImage
-          Tag="div"
-          className={classes.blockReason}
-          fluid={data.strapiSelfServicePage.Reason.Image && data.strapiSelfServicePage.Reason.Image ?
-            data.strapiSelfServicePage.Reason.Image.childImageSharp.fluid : null}
-          backgroundColor={`#465656`}
-        >
-        {/*<div data-aos="fade-up" className={classes.blockReason} style={{*/}
-        {/*  background: `url("${data.strapiSelfServicePage.Reason.Image && data.strapiSelfServicePage.Reason.Image ?*/}
-        {/*    data.strapiSelfServicePage.Reason.Image.childImageSharp.fixed.src : null*/}
-        {/*  }")`*/}
-        {/*}}>*/}
-            <h2>{data.strapiSelfServicePage.Reason.Title && data.strapiSelfServicePage.Reason.Title !== null ?
+        {/*<BackgroundImage*/}
+        {/*  Tag="div"*/}
+        {/*  className={classes.blockReason}*/}
+        {/*  fluid={data.strapiSelfServicePage.Reason.Image && data.strapiSelfServicePage.Reason.Image ?*/}
+        {/*    data.strapiSelfServicePage.Reason.Image.childImageSharp.fluid : null}*/}
+        {/*  backgroundColor={`#465656`}*/}
+        {/*>*/}
+        <div className={classes.blockReason} style={{
+          background: `url("${data.strapiSelfServicePage.Reason.Image && data.strapiSelfServicePage.Reason.Image ?
+            data.strapiSelfServicePage.Reason.Image[0].url : null
+          }")`
+        }}>
+            <h2>{
+              data.strapiSelfServicePage.Reason.Title && data.strapiSelfServicePage.Reason.Title !== null ?
               data.strapiSelfServicePage.Reason.Title : null
             }</h2>
             <h3>{data.strapiSelfServicePage.Reason.Subtitle && data.strapiSelfServicePage.Reason.Subtitle !== null ?
               data.strapiSelfServicePage.Reason.Subtitle : null
             }</h3>
-        </BackgroundImage>
-        {/*</div>*/}
+        {/*</BackgroundImage>*/}
+        </div>
       </div>
     </section>
   )

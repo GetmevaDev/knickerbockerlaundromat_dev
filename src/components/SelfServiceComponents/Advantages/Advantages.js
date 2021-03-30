@@ -21,11 +21,8 @@ const Advantages = () =>{
                       Text
                       id
                       Image {
-                          childImageSharp {
-                              fixed(width: 700) {
-                                  ...GatsbyImageSharpFixed
-                              }
-                          }
+                          alternativeText
+                          url
                       }
                   }
               }
@@ -51,8 +48,8 @@ const Advantages = () =>{
                       {/*/>*/}
                     <img src={
                       block.node.Image && block.node.Image !== null ?
-                      block.node.Image.childImageSharp.fixed.src : null
-                    } alt="" />
+                      block.node.Image[0].url : null
+                    } alt={block.node.Image[0].alternativeText} />
                   </div>
                 <div className={classes.blockText}>
                   <h3>{block.node.Title && block.node.Title !== null ?

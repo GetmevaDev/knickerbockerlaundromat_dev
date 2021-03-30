@@ -18,11 +18,8 @@ const HeightExtract = () => {
                   Title
                   Description
                   Img {
-                      childImageSharp {
-                          fluid(maxWidth: 3000){
-                              ...GatsbyImageSharpFluid
-                          }
-                      }
+                      alternativeText
+                      url
                   }
               }
           }
@@ -35,13 +32,19 @@ const HeightExtract = () => {
       paddingBottom: 0
     }}>
       <div className="container" data-aos="fade-up">
-        <BackgroundImage
-          Tag="div"
-          className={classes.blockDescription}
-          fluid={data.strapiSelfServicePage.DescriptionTwo.Img && data.strapiSelfServicePage.DescriptionTwo.Img ?
-            data.strapiSelfServicePage.DescriptionTwo.Img.childImageSharp.fluid : null}
-          backgroundColor={`#465656`}
-        >
+        {/*<BackgroundImage*/}
+        {/*  Tag="div"*/}
+        {/*  className={classes.blockDescription}*/}
+        {/*  fluid={data.strapiSelfServicePage.DescriptionTwo.Img && data.strapiSelfServicePage.DescriptionTwo.Img ?*/}
+        {/*    data.strapiSelfServicePage.DescriptionTwo.Img.childImageSharp.fluid : null}*/}
+        {/*  backgroundColor={`#465656`}*/}
+        {/*>*/}
+        <div className={classes.blockDescription} style={{
+          background: `url("${data.strapiSelfServicePage.DescriptionTwo.Img && data.strapiSelfServicePage.DescriptionTwo.Img ?
+            data.strapiSelfServicePage.DescriptionTwo.Img[0].url : null}")`
+        }}>
+
+
 
           <h2>{data.strapiSelfServicePage.DescriptionTwo.Title && data.strapiSelfServicePage.DescriptionTwo.Title !== null ?
             data.strapiSelfServicePage.DescriptionTwo.Title : null
@@ -50,8 +53,8 @@ const HeightExtract = () => {
           source={data.strapiSelfServicePage.DescriptionTwo.Description && data.strapiSelfServicePage.DescriptionTwo.Description !== null ?
             data.strapiSelfServicePage.DescriptionTwo.Description : null}
           />
-
-        </BackgroundImage>
+        </div>
+        {/*</BackgroundImage>*/}
       </div>
     </section>
   )
