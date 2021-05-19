@@ -138,7 +138,7 @@ main{
 }
 .scrollToTop{
   @include mediaWidth_767{
-    right: 80px !important;
+    right: 53px !important;
   }
 }
 
@@ -207,4 +207,29 @@ main{
 
 .row-reverse{
   flex-direction: row-reverse;
+}
+
+.jc-sb{
+  justify-content: space-between !important;
+}
+
+.manufacturer{
+  margin-right: 41px;
+  @include mediaWidth_767{
+    margin-right: auto;
+    margin-top: 15px;
+  }
+  img{
+    margin-right: 9px;
+  }
+  p{
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 15px;
+    color: #FFFFFF;
+  }
+  a{
+    position: relative !important;
+    color: #81E3FF;
+  }
 }
