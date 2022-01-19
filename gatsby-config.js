@@ -22,8 +22,8 @@ module.exports = {
       options: {
         apiURL: "https://cms-knick.herokuapp.com",
         // apiURL: process.env.DEPLOY_URL
-        // ? "https://cms-knick.herokuapp.com"
-        // : "http://localhost:1337",
+        //   ? "https://cms-knick.herokuapp.com"
+        //   : "http://localhost:1337",
         queryLimit: 1000, // Default to 100
         contentTypes: [`users`, `offers`, `equipments`, `advantages`],
         //If using single types place them in this array.
