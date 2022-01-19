@@ -1,0 +1,176 @@
+@import "./src/scss/utils/vars";
+@import "src/scss/utils/mixins";
+
+.container {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.offer {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  max-width: 1277px;
+  background: #ffffff;
+  box-shadow: 0px 10px 34px rgba(210, 210, 210, 0.5);
+  border-radius: 10px;
+}
+
+.text {
+  margin-bottom: 100px;
+  font-family: "Rubik-Regular";
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 34px;
+  text-align: center;
+  color: #4b4b4c;
+}
+
+.offerText {
+  font-family: "Rubik-Regular";
+  padding-bottom: 40px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 34px;
+  text-align: center;
+  color: #4b4b4c;
+}
+
+.title {
+  text-align: center;
+  font-family: "Rubik-Regular";
+  padding-top: 50px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 38px;
+  max-width: 814px;
+  text-align: center;
+  line-height: 46px;
+  margin: 0 auto;
+  color: #000000;
+}
+
+.offerMain {
+  margin-top: 42px;
+  padding-bottom: 42px;
+  display: flex;
+
+  align-content: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.offerLeft {
+  background: #2676bc;
+  box-shadow: 0px 10px 34px rgba(210, 210, 210, 0.5);
+  border-radius: 10px;
+  display: flex;
+  width: 50%;
+  margin-left: 50px;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.offerRight {
+  margin-left: 31px;
+  background: #43c0e4;
+  box-shadow: 0px 10px 34px rgba(210, 210, 210, 0.5);
+  border-radius: 10px;
+  width: 50%;
+  margin-right: 50px;
+
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.premium {
+  padding-top: 50px;
+  padding-left: 30px;
+  padding-right: 32px;
+}
+
+.premium p {
+  padding-top: 0;
+  margin: 0;
+}
+
+.price {
+  padding-top: 50px;
+  padding-right: 30px;
+}
+
+.price p {
+  font-family: "Rubik-Regular", Helvetica, Arial, sans-serif;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 47px;
+  line-height: 35px;
+
+  color: #ffffff;
+}
+
+.priceBottom {
+  padding-top: 10px;
+  font-size: 24px !important;
+}
+
+.premiumTitle {
+  font-family: "Rubik-Regular";
+  padding-bottom: 11px !important;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+
+  color: #ffffff;
+}
+
+.color {
+  font-family: "Rubik-Regular";
+
+  font-style: italic;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  padding-bottom: 50px;
+
+  color: #a0d3ff;
+}
+
+@media only screen and (min-width: $tableWidth) and (max-width: $smDesktopWidth) {
+  .offerRight,
+  .offerLeft {
+    flex-direction: column;
+  }
+
+  .price {
+    padding-top: 0;
+    padding-right: 0;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: $smPhoneWidth) and (max-width: $tableWidth) {
+  .offerMain {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .offerLeft,
+  .offerRight {
+    margin-top: 10px;
+    margin-left: 0;
+    flex-direction: column;
+
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .price {
+    padding-top: 0;
+    padding-right: 0;
+    text-align: center;
+  }
+}

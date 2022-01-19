@@ -20,16 +20,12 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: process.env.DEPLOY_URL
-          ? 'https://cms-knick.herokuapp.com'
-          : 'http://localhost:1337',
+        apiURL: "https://cms-knick.herokuapp.com",
+        // apiURL: process.env.DEPLOY_URL
+        // ? "https://cms-knick.herokuapp.com"
+        // : "http://localhost:1337",
         queryLimit: 1000, // Default to 100
-        contentTypes: [
-          `users`,
-          `offers`,
-          `equipments`,
-          `advantages`,
-        ],
+        contentTypes: [`users`, `offers`, `equipments`, `advantages`],
         //If using single types place them in this array.
         singleTypes: [
           `home-page`,
@@ -39,6 +35,7 @@ module.exports = {
           `self-service-page`,
           `drop-off-service`,
           `description-site`,
+          `pick-up`,
         ],
         // Possibility to login with a strapi user, when content types are not publically available (optional).
         loginData: {

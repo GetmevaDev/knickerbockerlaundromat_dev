@@ -1,0 +1,44 @@
+@import "./src/scss/utils/vars";
+@import "src/scss/utils/mixins";
+
+.section-cycle {
+  h2 {
+    margin-bottom: 10px !important;
+  }
+}
+
+.after-title {
+  text-align: center;
+}
+
+.card-cycle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 175px;
+  height: 175px;
+  background: #2676bc;
+  border-radius: 50%;
+  margin-bottom: 26px;
+}
+
+.title {
+  width: 164px;
+}
+.img-arrow {
+  margin-bottom: 40px;
+}
+span {
+  color: #4b4b4c;
+}
+.adaptive-block {
+  @include mediaWidth_900 {
+    flex-direction: column;
+    align-items: center !important;
+
+    .img-arrow {
+      transform: rotate(90deg);
+      margin: 37px 0;
+    }
+  }
+}
