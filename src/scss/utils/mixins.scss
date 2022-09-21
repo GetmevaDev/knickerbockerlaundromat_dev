@@ -163,6 +163,13 @@
 }
 
 ;
+@mixin mediaWidth_1280 {
+  @media screen and (max-width: 1280px) {
+    @content
+  }
+}
+
+;
 
 @mixin mediaWidth_992 {
   @media screen and (max-width: 992px) {

@@ -52,23 +52,26 @@
 
 .offerMain {
   margin-top: 42px;
-  padding-bottom: 42px;
+  padding: 0 50px 42px;
   display: flex;
-
   align-content: center;
   width: 100%;
   justify-content: space-between;
 }
 
 .offerLeft {
-  background: #2676bc;
+  padding: 49px 31px;
   box-shadow: 0px 10px 34px rgba(210, 210, 210, 0.5);
   border-radius: 10px;
-  display: flex;
+  // display: flex;
   width: 50%;
-  margin-left: 50px;
+  // margin-left: 50px;
   justify-content: space-between;
   align-content: center;
+}
+
+.offerLeft:not(:last-child) {
+  margin-right: 20px;
 }
 
 .offerRight {
@@ -85,9 +88,9 @@
 }
 
 .premium {
-  padding-top: 50px;
-  padding-left: 30px;
-  padding-right: 32px;
+  // padding-top: 50px;
+  // padding-left: 30px;
+  // padding-right: 32px;
 }
 
 .premium p {
@@ -96,8 +99,8 @@
 }
 
 .price {
-  padding-top: 50px;
-  padding-right: 30px;
+  // padding-top: 50px;
+  // padding-right: 30px;
 }
 
 .price p {
@@ -112,6 +115,8 @@
 }
 
 .priceBottom {
+  display: inline;
+  color: #ffffff;
   padding-top: 10px;
   font-size: 24px !important;
 }
@@ -122,8 +127,12 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
-
+  margin-bottom: 20px !important;
   color: #ffffff;
+}
+
+.offerLeft:first-child .premiumTitle {
+  margin-bottom: 44px !important;
 }
 
 .color {
@@ -133,12 +142,11 @@
   font-weight: normal;
   font-size: 16px;
   line-height: 19px;
-  padding-bottom: 50px;
-
-  color: #a0d3ff;
+  color: #D8F6FF;
 }
 
 @media only screen and (min-width: $tableWidth) and (max-width: $smDesktopWidth) {
+
   .offerRight,
   .offerLeft {
     flex-direction: column;

@@ -1,5 +1,6 @@
 @import "./src/scss/utils/vars";
 @import "src/scss/utils/mixins";
+
 .main {
   display: flex;
   justify-content: space-between;
@@ -10,8 +11,33 @@
   position: relative;
   top: -20%;
 }
+
 .video {
   border-radius: 20px;
+}
+
+.link {
+  display: inline-block;
+  padding: 22px 53px;
+  background: #2676BC;
+  box-shadow: 0px 10px 34px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+
+  a {
+    color: #fff;
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: 500;
+  }
+
+  //   @include mediaWidth_ {
+  //    align-self: center;
+  //  }
+
+  @include mediaWidth_992 {
+    display: block;
+    text-align: center;
+  }
 }
 
 .section-header {
@@ -19,6 +45,11 @@
   background-repeat: no-repeat !important;
   background-size: cover !important;
   background-position-x: 72% !important;
+
+  @include mediaWidth_1280 {
+    height: 106vh;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -29,18 +60,21 @@
     top: 0;
     left: 0;
   }
+
   .row {
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100vh;
   }
+
   h3,
   h2,
   h4 {
     color: #fff;
     text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
   }
+
   h3 {
     font-family: $headingFonts;
     max-width: 700px;
@@ -49,28 +83,34 @@
     line-height: 95%;
     color: #ffffff;
     margin-top: -3.5em;
+
     @include mediaWidth_624 {
       font-size: 8vw;
       line-height: 7vw;
       margin-top: -4em;
     }
   }
+
   h2 {
     font-family: $headingFonts;
     font-weight: 700;
     font-size: 88px;
     line-height: 80px;
+
     @include mediaWidth_624 {
       font-size: 15vw;
       line-height: 14vw;
     }
   }
+
   h4 {
     font-size: 30px;
     line-height: 37px;
     max-width: 744px;
     margin-top: 31px;
     color: #ffffff;
+    margin-bottom: 40px;
+
     @include mediaWidth_624 {
       font-size: 5vw;
       line-height: 7vw;

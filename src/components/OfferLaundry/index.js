@@ -12,14 +12,15 @@ const Offer = () => {
     {
       strapiPickUp {
         card {
-          Title
           cardSubTitle
           cardTitle
           pricePer
           price
-          span
+          BackgroundColor
         }
         textundercard
+        TitleCard
+        Span
       }
     }
   `)
@@ -29,28 +30,30 @@ const Offer = () => {
   return (
     <div className={classes.container}>
       <div data-aos="fade-up" className={classes.offer}>
-        <h3 className={classes.title}>{data.strapiPickUp.card[0].Title}</h3>
+        <h3 className={classes.title}>{data.strapiPickUp.TitleCard}</h3>
 
         <div className={classes.offerMain}>
-          <div className={classes.offerLeft}>
-            <div className={classes.premium}>
-              <p className={classes.premiumTitle}>
-                {data.strapiPickUp.card[0].cardTitle}
-              </p>
-              <p className={classes.color}>
-                {data.strapiPickUp.card[0].cardSubTitle}
-              </p>
-            </div>
-            <div className={classes.price}>
-              <p>
-                {data.strapiPickUp.card[0].price} <br />
-                <p className={classes.priceBottom}>
-                  {data.strapiPickUp.card[0].pricePer}
-                </p>
-              </p>
-            </div>
-          </div>
-          <div className={classes.offerRight}>
+          {data.strapiPickUp.card.map(item => {
+            return (
+              <div
+                className={classes.offerLeft}
+                style={{ backgroundColor: `#${item.BackgroundColor}` }}
+              >
+                <div className={classes.price}>
+                  <p>
+                    {item.price}
+                    <span className={classes.priceBottom}>{item.pricePer}</span>
+                  </p>
+                </div>
+                <div className={classes.premium}>
+                  <p className={classes.premiumTitle}>{item.cardTitle}</p>
+                  <p className={classes.color}>{item.cardSubTitle}</p>
+                </div>
+              </div>
+            )
+          })}
+
+          {/* <div className={classes.offerRight}>
             <div className={classes.premium}>
               <p className={classes.premiumTitle}>
                 {data.strapiPickUp.card[1].cardTitle}
@@ -68,11 +71,9 @@ const Offer = () => {
                 </p>
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
-        <span className={classes.offerText}>
-          {data.strapiPickUp.card[1].span}
-        </span>
+        <span className={classes.offerText}>{data.strapiPickUp.Span}</span>
       </div>
       <span className={classes.text} data-aos="fade-up">
         {data.strapiPickUp.textundercard}
