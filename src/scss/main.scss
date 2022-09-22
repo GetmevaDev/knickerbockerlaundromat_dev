@@ -57,6 +57,7 @@ section {
   padding-top: 91px;
   padding-bottom: 93px;
 }
+
 main {
   background: #f2f2f2;
 }
@@ -73,33 +74,44 @@ main {
 
 .site-header {
   padding: 26px 15px;
+
   @include mediaWidth_900 {
     padding: 0;
   }
 }
 
 .site-footer {
+  @include mediaWidth_700 {
+    padding-bottom: 30px;
+  }
+
   .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 15px;
+
     @include mediaWidth_767 {
       flex-direction: column;
     }
   }
+
   border-top: 1px solid rgba(0, 0, 0, 0.0925611);
   padding-top: 46.72px;
+
   section {
     padding-top: 29px;
     padding-bottom: 27px;
+
     .row {
       align-items: center;
       justify-content: center;
+
       @include mediaWidth_767 {
         justify-content: flex-start;
       }
     }
+
     p {
       margin-bottom: 0;
     }
@@ -125,10 +137,12 @@ main {
   color: #fff;
   font-size: 13px;
   line-height: 24px;
+
   @include mediaWidth_767 {
     margin-right: auto;
   }
 }
+
 .scrollToTop {
   @include mediaWidth_767 {
     right: 53px !important;
@@ -141,6 +155,7 @@ main {
   height: 82px !important;
   border-radius: 50%;
   transform: translate(0, -26%) !important;
+
   @include mediaWidth_1025 {
     top: 100% !important;
     box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
@@ -154,16 +169,20 @@ main {
   left: 80px !important;
   background: #fff !important;
   z-index: 100 !important;
+
   @include mediaWidth_1025 {
     left: 40%;
   }
+
   &:hover {
     transition: 0.3s;
     background: #43c0e4 !important;
+
     &::before {
       color: #fff !important;
     }
   }
+
   &::before {
     display: inline-block;
     color: #43c0e4 !important;
@@ -172,6 +191,7 @@ main {
     font-family: "FontAwesome" !important;
   }
 }
+
 .slick-next {
   display: flex !important;
   justify-content: center;
@@ -179,16 +199,20 @@ main {
   right: 80px !important;
   background: #fff !important;
   z-index: 100 !important;
+
   @include mediaWidth_1025 {
     right: 40%;
   }
+
   &:hover {
     transition: 0.3s;
     background: #43c0e4 !important;
+
     &::before {
       color: #fff !important;
     }
   }
+
   &::before {
     display: inline-block;
     color: #43c0e4 !important;
@@ -208,19 +232,23 @@ main {
 
 .manufacturer {
   margin-right: 41px;
+
   @include mediaWidth_767 {
     margin-right: auto;
     margin-top: 15px;
   }
+
   img {
     margin-right: 9px;
   }
+
   p {
     font-weight: normal;
     font-size: 13px;
     line-height: 15px;
     color: #ffffff;
   }
+
   a {
     position: relative !important;
     color: #81e3ff;
