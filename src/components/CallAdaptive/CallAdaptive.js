@@ -20,7 +20,7 @@ const CallAdaptive = () => {
         <img src={CallImage} alt="" /> Call us
       </a>
       <a href={data.strapiContactsAndLocation.makeAppointment}>
-        Make appointment
+        SCHEDULE A PICKUP
       </a>
     </div>
   )
