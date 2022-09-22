@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import Footer from "./footer"
+import CallAdaptive from "./CallAdaptive/CallAdaptive"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -30,6 +31,7 @@ const Layout = ({ children }) => {
         <main>{children}</main>
       </div>
       <Footer />
+      <CallAdaptive />
     </>
   )
 }
