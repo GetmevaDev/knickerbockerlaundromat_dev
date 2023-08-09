@@ -18,7 +18,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     {
-
       resolve: `gatsby-source-strapi`,
       options: {
         apiURL: "https://cms-knick.herokuapp.com",
