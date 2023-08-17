@@ -21,7 +21,7 @@ const Footer = () => {
         }}
       >
         <div className={`container row jc-sb`}>
-          <p className={`text`}>©Copyright 2022. All rights reserved</p>
+          <p className={`text`}>©Copyright 2023. All rights reserved</p>
           <div className={`manufacturer row`}>
             <img src={LogoM} alt="" />
             <p>
