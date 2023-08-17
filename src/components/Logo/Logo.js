@@ -11,7 +11,7 @@ const Logo = () => {
           strapiHomePage {
                   Logo {
                       childImageSharp {
-                          fixed(width: 231){
+                          fixed(width: 131){
                               ...GatsbyImageSharpFixed
                           }
                       }
@@ -26,8 +26,7 @@ const Logo = () => {
     to={`/`}
     className={classes.logoLink}
     >
-      <Img fixed={ logo.strapiHomePage.Logo && logo.strapiHomePage.Logo !== null ?
-        logo.strapiHomePage.Logo.childImageSharp.fixed : null} />
+      <Img fixed={logo.strapiHomePage.Logo.childImageSharp.fixed} />
     </Link>
   )
 }

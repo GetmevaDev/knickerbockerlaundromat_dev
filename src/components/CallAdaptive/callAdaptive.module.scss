@@ -13,6 +13,10 @@
   left: 0 !important;
   z-index: 10;
 
+  .scheduleLink{
+    display: none;
+  }
+
   a{
     display: flex;
     justify-content: center;

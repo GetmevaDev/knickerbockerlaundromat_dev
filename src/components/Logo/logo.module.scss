@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   max-width: 231px;
+  max-height: 50px;
   z-index: 1001;
   @include mediaWidth_900{
     margin-left: 20px;
