@@ -3,8 +3,7 @@
 .logoLink{
   display: flex;
   align-items: center;
-  max-width: 131px;
-  max-height: 50px;
+  max-width: 231px;
   z-index: 1001;
   @include mediaWidth_900{
     margin-left: 20px;
