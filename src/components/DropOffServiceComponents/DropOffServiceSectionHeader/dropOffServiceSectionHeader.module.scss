@@ -29,7 +29,9 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    align-items: flex-start;
+    align-items: end;
+    padding: 0  5px;
+    text-align: end;
   }
   h2,h4{
     text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
