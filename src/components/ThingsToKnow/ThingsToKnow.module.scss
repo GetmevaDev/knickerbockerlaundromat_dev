@@ -1,0 +1,37 @@
+.container {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.things {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.title {
+  color: #000;
+  font-family: "Rubik-Regular";
+  padding-top: 100px;
+  padding-bottom: 30px;
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 46px;
+}
+
+.description {
+  color: #1b1b1b;
+  font-family: "Rubik-Regular";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 120% */
+}
+
+@media (max-width: 700px) {
+  .things {
+    grid-template-columns: auto;
+  }
+}

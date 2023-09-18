@@ -22,8 +22,6 @@ const SectionHeader = () => {
     }
   `)
 
-  console.log("data", data.strapiPickUp.topbar.link)
-
   return (
     <section
       className={classes.sectionHeader}
@@ -34,7 +32,7 @@ const SectionHeader = () => {
       <div className={`container ${classes.row}`}>
         <div className={classes.main}>
           <div className={classes.left}>
-            <h3 className={classes.title}>{data.strapiPickUp.topbar.title}</h3>
+            <h1 className={classes.title}>{data.strapiPickUp.topbar.title}</h1>
             <h4 className={classes.subtitle}>
               {data.strapiPickUp.topbar.subtitle}
             </h4>

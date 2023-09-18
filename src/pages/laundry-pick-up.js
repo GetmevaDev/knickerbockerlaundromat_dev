@@ -17,7 +17,7 @@ const IndexPage = () => {
       <SEO />
       <SectionHeader />
 
-      <EquipmentSection />
+      {/* <EquipmentSection /> */}
     </Layout>
   )
 }
