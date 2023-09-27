@@ -55,7 +55,7 @@ const Offer = () => {
 
           {/* <div className={classes.offerRight}>
             <div className={classes.premium}>
-              <p className={classes.premiumTitle}>
+              <p className={classes.premiumTitle}>  
                 {data.strapiPickUp.card[1].cardTitle}
               </p>
 
@@ -73,7 +73,7 @@ const Offer = () => {
             </div>
           </div> */}
         </div>
-        <span className={classes.offerText}>{data.strapiPickUp.Span}</span>
+        {/* <span className={classes.offerText}>{data.strapiPickUp.Span}</span> */}
       </div>
       <span className={classes.text} data-aos="fade-up">
         {data.strapiPickUp.textundercard}

@@ -8,23 +8,19 @@ import SectionHeader from "../components/homePageComponents/sectionHeader/Sectio
 import SectionContacts from "../components/homePageComponents/sectionContacts/SectionContacts"
 import SectionOffer from "../components/homePageComponents/sectionOffers/SectionOffers"
 
-
-
 import "../scss/main.scss"
 import EquipmentSection from "../components/homePageComponents/equipmentSection/EquipmentSection"
 
 const IndexPage = () => {
-
-    return(
-        <Layout>
-            <SEO />
-            <SectionHeader />
-            <SectionContacts />
-            <SectionOffer />
-            <EquipmentSection />
-        </Layout>
-      )
-
+  return (
+    <Layout>
+      <SEO />
+      <SectionHeader />
+      <SectionContacts />
+      <SectionOffer />
+      {/* <EquipmentSection /> */}
+    </Layout>
+  )
 }
 
 export default IndexPage

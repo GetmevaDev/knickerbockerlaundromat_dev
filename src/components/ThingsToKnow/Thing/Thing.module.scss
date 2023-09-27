@@ -1,0 +1,37 @@
+.thing {
+  border-radius: 10px;
+  background: #fff;
+  padding: 30px;
+  box-shadow: 0px 10px 34px 0px rgba(0, 0, 82, 0.07);
+}
+
+.number {
+  font-family: "Rubik-Regular";
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 100;
+  padding-bottom: 10px;
+  line-height: 46px;
+}
+
+.description {
+  color: #434343;
+  font-family: "Rubik-Regular";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 26px;
+}
+
+.content {
+}
+.read {
+  overflow: hidden;
+  color: #2676bc;
+  text-overflow: ellipsis;
+  font-family: "Rubik-Regular";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+}

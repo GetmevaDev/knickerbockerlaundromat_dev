@@ -5,15 +5,13 @@ import Posters from "../components/DropOffServiceComponents/Posters/Posters"
 import Table from "../components/DropOffServiceComponents/Table/Table"
 import EquipmentSection from "../components/homePageComponents/equipmentSection/EquipmentSection"
 
-
-const DropOffService = () =>{
-
-  return(
+const DropOffService = () => {
+  return (
     <Layout>
       <DropOffServiceSectionHeader />
       <Posters />
       <Table />
-      <EquipmentSection />
+      {/* <EquipmentSection /> */}
     </Layout>
   )
 }

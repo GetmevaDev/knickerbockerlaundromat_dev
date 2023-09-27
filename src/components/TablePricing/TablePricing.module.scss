@@ -1,0 +1,132 @@
+.container {
+  margin: 0 auto;
+  max-width: 1250px;
+}
+
+.table {
+  margin-top: 100px;
+}
+
+.title {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+
+  color: #000;
+  font-family: "Rubik-Regular";
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 46px;
+  span {
+    color: #434343;
+    font-family: "Rubik-Regular";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 125% */
+  }
+}
+
+.service_table_container {
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 10px 34px 0px rgba(0, 0, 82, 0.07);
+  flex-basis: 65%;
+}
+
+.service_table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.table_header {
+  display: flex;
+  justify-content: space-between;
+  background: #2676bc;
+  border-radius: 10px 10px 0px 0px;
+  height: 66px;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.table_body {
+  display: flex;
+  flex-direction: column;
+}
+
+.table_row {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #ccc;
+}
+
+.services_name {
+  flex-basis: 70%;
+  text-wrap: balance;
+  color: #fff;
+  font-family: "Rubik-Regular";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.service_name {
+  flex-basis: 70%;
+  border-right: 1px solid #eaeaea;
+}
+
+.service_name_inner {
+  padding: 17px 20px;
+}
+
+.name_plan {
+  flex-basis: 30%;
+  text-align: center;
+  color: #fff;
+  font-family: "Rubik-Regular";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.plan_option {
+  text-align: left;
+  flex-basis: 30%;
+  border-right: 1px solid #eaeaea;
+}
+
+.plan_option_inner {
+  padding: 15px 10px;
+}
+
+.tables {
+  justify-content: space-between;
+  display: flex;
+  margin-top: 30px;
+  align-items: flex-start;
+}
+
+.table_addons {
+  flex-basis: 35%;
+}
+
+@media (max-width: 700px) {
+  .title {
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tables {
+    flex-direction: column;
+
+    gap: 20px;
+    width: 100%;
+  }
+}
