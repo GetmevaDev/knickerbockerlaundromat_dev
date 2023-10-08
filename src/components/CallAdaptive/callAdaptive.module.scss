@@ -1,9 +1,8 @@
-
-
-.adaptiveCall{
-  @media (min-width: 700px){
+.adaptiveCall {
+  @media (min-width: 700px) {
     display: none;
   }
+
   display: flex;
   //align-items: center;
   justify-content: space-around;
@@ -13,11 +12,9 @@
   left: 0 !important;
   z-index: 10;
 
-  .scheduleLink{
-    display: none;
-  }
 
-  a{
+
+  a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,13 +26,14 @@
     color: #69a6d5;
     flex-grow: 1;
 
-    img{
+    img {
       width: 20px;
       height: 20px;
       margin-right: 10px;
     }
   }
-  a:last-child{
+
+  a:last-child {
     flex-grow: 2;
     background: #69a6d5;
     color: #fff;
