@@ -20,8 +20,8 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: "https://cms-knick-dev-71b6bbdd3892.herokuapp.com",
-        // apiURL: "http://localhost:1337",
+        // apiURL: "https://cms-knick-dev-71b6bbdd3892.herokuapp.com",
+        apiURL: "http://localhost:1337",
         // apiURL: process.env.DEPLOY_URL
         //   ? "https://cms-knick.herokuapp.com"
         //   : "http://localhost:1337",
@@ -37,6 +37,7 @@ module.exports = {
           `drop-off-service`,
           `description-site`,
           `pick-up`,
+          `pop-up-warning`,
         ],
         // Possibility to login with a strapi user, when content types are not publically available (optional).
         loginData: {
