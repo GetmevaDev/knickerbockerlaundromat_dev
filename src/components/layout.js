@@ -14,6 +14,7 @@ import { PopUp } from "./PopUp/popUp"
 import Footer from "./footer"
 import Header from "./header"
 
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
