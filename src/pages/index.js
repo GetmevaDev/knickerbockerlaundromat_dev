@@ -1,15 +1,13 @@
-import React, { useEffect } from "react"
-import { Link } from "gatsby"
+import React from "react"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
-import SectionHeader from "../components/homePageComponents/sectionHeader/SectionHeader"
 import SectionContacts from "../components/homePageComponents/sectionContacts/SectionContacts"
+import SectionHeader from "../components/homePageComponents/sectionHeader/SectionHeader"
 import SectionOffer from "../components/homePageComponents/sectionOffers/SectionOffers"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 
+import { Discount } from "../components/Discount/Discount"
 import "../scss/main.scss"
-import EquipmentSection from "../components/homePageComponents/equipmentSection/EquipmentSection"
 
 const IndexPage = () => {
   return (
@@ -17,6 +15,8 @@ const IndexPage = () => {
       <SEO />
       <SectionHeader />
       <SectionContacts />
+      <Discount />
+
       <SectionOffer />
       {/* <EquipmentSection /> */}
     </Layout>

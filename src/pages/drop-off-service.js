@@ -1,14 +1,16 @@
 import React from "react"
-import Layout from "../components/layout"
+import { Discount } from "../components/Discount/Discount"
 import DropOffServiceSectionHeader from "../components/DropOffServiceComponents/DropOffServiceSectionHeader/DropOffServiceSectionHeader"
 import Posters from "../components/DropOffServiceComponents/Posters/Posters"
 import Table from "../components/DropOffServiceComponents/Table/Table"
-import EquipmentSection from "../components/homePageComponents/equipmentSection/EquipmentSection"
+import Layout from "../components/layout"
 
 const DropOffService = () => {
   return (
     <Layout>
       <DropOffServiceSectionHeader />
+      <Discount />
+
       <Posters />
       <Table />
       {/* <EquipmentSection /> */}
