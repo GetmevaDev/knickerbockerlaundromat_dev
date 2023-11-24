@@ -58,14 +58,27 @@ p{
   }
 }
 
+.linkContainer{
+  a{
+    display: block;
+
+    padding: 14px 40px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 6px;
+    text-align: center;
+  }
+}
+
 .linkWarning{
-  display: inline-block;
+  margin-bottom: 16px;
   background: #43c0e4;
-  padding: 14px 40px;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
   color: #FFFFFF;
-  border-radius: 6px;
-  text-align: center;
+}
+
+.callWarning{
+  background: #FFFFFF;
+  color: #43c0e4;
+  border: solid #43c0e4;
 }

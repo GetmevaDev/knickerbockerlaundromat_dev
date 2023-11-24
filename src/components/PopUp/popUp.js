@@ -15,13 +15,14 @@ export function PopUp(){
               Text
               Name_Link
               Link
+              PhoneNumber
               Switch_PopUp
               MaxWidthBlock
           }
       }
   `)
 
-  const {Text, Name_Link, Link, Switch_PopUp, MaxWidthBlock} = data.strapiPopUpWarning;
+  const {Text, Name_Link, Link, PhoneNumber, Switch_PopUp, MaxWidthBlock} = data.strapiPopUpWarning;
 
   const [cleanPopUp, setCleanPopUp] = useLocalStorage("PopUpOff", true);
 
@@ -53,7 +54,10 @@ export function PopUp(){
             <img src={CloseWarning} alt="" />
           </button>
           <ReactMarkdown source={Text} />
-          <a className={classes.linkWarning} href={Link}>{Name_Link}</a>
+          <div className={classes.linkContainer}>
+            <a className={classes.linkWarning} href={Link}>{Name_Link}</a>
+            <a className={classes.callWarning} href={`tel:${PhoneNumber}`}>Click To Call</a>
+          </div>
         </div>
       </div> : null
   )
