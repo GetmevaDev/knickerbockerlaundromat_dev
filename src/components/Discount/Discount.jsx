@@ -12,7 +12,6 @@ export const Discount = () => {
       <p>
         20% off your next pick up and delivery order! Just use Promo Code: 20OFF
       </p>
-      <p> Expires 11/1/2023</p>
     </div>
   )
 }
