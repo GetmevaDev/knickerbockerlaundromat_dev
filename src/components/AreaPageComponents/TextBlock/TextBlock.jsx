@@ -12,11 +12,11 @@ const TextBlock = ({
   return (
     <div className={styles.wrapper}>
       <div className={styles.mainBlock}>
-        <h1>{mainTitle}</h1>
+        <h2>{mainTitle}</h2>
         <p>{mainText}</p>
       </div>
       <div className={styles.ourServices}>
-        <h2>{ourServicesTitle}</h2>
+        <h3>{ourServicesTitle}</h3>
         <p>
           <ReactMarkdown source={ourServicesContent} />
         </p>
