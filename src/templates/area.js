@@ -11,7 +11,7 @@ const Area = ({ data }) => {
   const area = data.strapiAreas
   const title = area.SEO?.metaTitle
   const description = area.SEO?.metaDescription
-  const image = area.SEO?.metImage?.url
+  const image = area.SEO?.metImage?.publicURL
 
   return (
     <Layout>
@@ -103,7 +103,7 @@ export const query = graphql`
       SEO {
         metaDescription
         metaImage {
-          url
+          publicURL
         }
         metaTitle
       }
