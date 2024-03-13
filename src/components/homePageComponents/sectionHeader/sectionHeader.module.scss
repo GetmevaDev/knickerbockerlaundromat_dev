@@ -30,6 +30,7 @@
         flex-direction: column;
         height: 60%;
         justify-content: space-around;
+        row-gap: 16px;
      }
   }
 
@@ -44,6 +45,7 @@
       width: 100%;
       display: flex;
       justify-content: center;
+      order: 1;
      }
   }
 
@@ -55,6 +57,7 @@
     
      @include mediaWidth_624{
       width: 100%;
+      order: 0;
      }
   }
 

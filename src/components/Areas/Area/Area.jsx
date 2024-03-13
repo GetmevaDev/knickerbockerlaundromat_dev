@@ -2,9 +2,9 @@ import React from "react"
 
 import styles from "./Area.module.scss"
 
-export const Area = ({ number, text }) => {
+export const Area = ({ number, text, slug }) => {
   return (
-    <div className={styles.area}>
+    <a href={`/areas-we-server/${slug}`} className={styles.area}>
       <div className={styles.number}>{number}</div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -17,6 +17,6 @@ export const Area = ({ number, text }) => {
         <circle cx="2" cy="2.5" r="2" fill="#2676BC" />
       </svg>
       <div className={styles.text}>{text}</div>
-    </div>
+    </a>
   )
 }

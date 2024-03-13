@@ -16,6 +16,7 @@ export const Areas = () => {
           AreaPlace {
             number
             place
+            slug
             id
           }
           id
@@ -43,7 +44,12 @@ export const Areas = () => {
               </div>
               <div className={styles.areas_block}>
                 {area?.AreaPlace?.map(item => (
-                  <Area number={item.number} text={item.place} key={item.id} />
+                  <Area
+                    number={item.number}
+                    text={item.place}
+                    slug={item.slug}
+                    key={item.id}
+                  />
                 ))}
               </div>
             </div>
