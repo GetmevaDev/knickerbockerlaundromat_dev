@@ -26,7 +26,7 @@ module.exports = {
         //   ? "https://cms-knick.herokuapp.com"
         //   : "http://localhost:1337",
         queryLimit: 1000, // Default to 100
-        contentTypes: [`users`, `offers`, `equipments`, `advantages`],
+        contentTypes: [`users`, `offers`, `equipments`, `advantages`, `areas`],
         //If using single types place them in this array.
         singleTypes: [
           `home-page`,

@@ -4,7 +4,7 @@ import styles from "./Area.module.scss"
 
 export const Area = ({ number, text, slug }) => {
   return (
-    <a href={`/areas-we-server/${slug}`} className={styles.area}>
+    <a href={`/areas-we-serve/${slug}`} className={styles.area}>
       <div className={styles.number}>{number}</div>
       <svg
         xmlns="http://www.w3.org/2000/svg"

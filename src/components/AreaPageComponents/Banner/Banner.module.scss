@@ -1,0 +1,45 @@
+@import "./src/scss/utils/vars";
+@import "src/scss/utils/mixins";
+
+.wrapper {
+  overflow: hidden;
+  width: 100%;
+  min-height: 953px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  h1, h3{
+    width: 60%;
+    margin: 0 auto;
+    color: white;
+    font-family: "Rubik-regular";
+    font-weight: 700;
+
+      @include mediaWidth_767{
+        width: 90%;
+      }
+  }
+
+  h1 {
+    font-size: 88px;
+
+     @include mediaWidth_767{
+        font-size: 63px;
+        white-space: inherit;
+      }
+  }
+
+  h3 {
+    font-size: 55px;
+    white-space: nowrap;
+
+     @include mediaWidth_767{
+        font-size: 35px;
+        white-space: inherit;
+      }
+  }
+}

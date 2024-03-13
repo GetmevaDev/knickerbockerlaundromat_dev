@@ -1,0 +1,51 @@
+@import "./src/scss/utils/vars";
+@import "src/scss/utils/mixins";
+
+.wrapper {
+    width: 1178px;
+    max-width: 100%;
+    margin: 50px auto;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
+
+      @include mediaWidth_767{
+        max-width: 95%;
+      }
+}
+
+.mainBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        font-size: 36px;
+        line-height: 46px;
+        font-weight: 700;
+    }
+
+    p {
+        margin-top: 20px;
+        line-height: 24px;
+    }
+}
+
+.ourServices {
+    margin-top: 20px;
+    h2 {
+        text-align: center;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 35px;
+    }
+
+    p {
+        margin-top: 20px;
+        text-align: start;
+
+        li {
+            list-style-type: disc;
+        }
+    }
+}
