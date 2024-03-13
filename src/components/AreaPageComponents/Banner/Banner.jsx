@@ -8,8 +8,10 @@ const Banner = ({ title, subtitle, imgUrl }) => {
       className={styles.wrapper}
       style={{ backgroundImage: `url(${imgUrl})` }}
     >
-      <h3>{subtitle}</h3>
-      <h1>{title}</h1>
+      <h1>
+        {subtitle}
+        {`\n${title}`}
+      </h1>
     </div>
   )
 }
