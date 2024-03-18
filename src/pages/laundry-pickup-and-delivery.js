@@ -6,9 +6,11 @@ import { TablePricing } from "../components/TablePricing/TablePricing"
 import { ThingsToKnow } from "../components/ThingsToKnow/ThingsToKnow"
 import SectionHeaderLaundry from "../components/homePageComponents/sectionHeaderLaundry"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 export default function PickUp() {
   return (
     <Layout>
+      <SEO/>
       <SectionHeaderLaundry />
       <Discount />
       <Areas />

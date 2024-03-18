@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import { useLocation } from '@reach/router';
 
 function SEO({ description, lang, meta, title }) {
   const data = useStaticQuery(
@@ -29,16 +30,27 @@ function SEO({ description, lang, meta, title }) {
     `
   )
 
-  const metaDescription = description || data.strapiDescriptionSite.Description
-  const defaultTitle = data.strapiDescriptionSite.Title
-  const imageData = data.strapiDescriptionSite.Image && data.strapiDescriptionSite.Image !== null ?
+  const metaDescription = description || data?.strapiDescriptionSite?.Description
+  const defaultTitle = data?.strapiDescriptionSite?.Title
+  const imageData = data?.strapiDescriptionSite?.Image && data.strapiDescriptionSite.Image !== null ?
     data.strapiDescriptionSite.Image.childImageSharp.fixed.src : "";
+
+    const location = useLocation();
+
+    const canonicalUrl = `https://saunderslaundromat.com${location.pathname}`;
 
   return (
     <Helmet
+      defer={false}
       htmlAttributes={{
         lang,
       }}
+      link={[
+        {
+          rel: 'canonical',
+          href: canonicalUrl
+        }
+      ]}
       title={defaultTitle}
       titleTemplate={defaultTitle}
       meta={[

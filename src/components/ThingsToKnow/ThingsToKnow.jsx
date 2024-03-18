@@ -28,7 +28,6 @@ export const ThingsToKnow = () => {
     Aos.init({ duration: 900 })
   }, [])
 
-  console.log(data, "strapiPickUp color")
 
   return (
     <div className={styles.container} data-aos="fade-up">

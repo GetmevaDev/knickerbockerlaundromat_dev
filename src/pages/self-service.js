@@ -12,10 +12,12 @@ import Layout from "../components/layout"
 import "slick-carousel/slick/slick-theme.css"
 import "slick-carousel/slick/slick.css"
 import { Discount } from "../components/Discount/Discount"
+import SEO from "../components/seo"
 
 const SelfService = () => {
   return (
     <Layout>
+      <SEO/>
       <SimpleSlider />
       <Discount />
 
