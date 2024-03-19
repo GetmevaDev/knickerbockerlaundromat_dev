@@ -24,17 +24,17 @@ const Area = ({ data }) => {
     <Layout>
       <Helmet
         defer={false}
-        title={title}
-        defaultTitle={title}
         link={[
           {
             rel: "canonical",
             href: canonicalUrl,
           },
         ]}
+        title={title}
+        titleTemplate={title}
         meta={[
           {
-            property: "description",
+            name: `description`,
             content: description,
           },
           {
