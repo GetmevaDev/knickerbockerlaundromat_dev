@@ -7,6 +7,8 @@ import LogoM from "../images/221.svg"
 import { animateScroll as scroll } from "react-scroll"
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear()
+
   return (
     <footer className={`site-footer`}>
       <div className="container">
@@ -21,7 +23,9 @@ const Footer = () => {
         }}
       >
         <div className={`container row jc-sb`}>
-          <p className={`text`}>©Copyright 2023. All rights reserved</p>
+          <p className={`text`}>
+            ©Copyright {currentYear}. All rights reserved
+          </p>
           <div className={`manufacturer row`}>
             <img src={LogoM} alt="" />
             <p>
