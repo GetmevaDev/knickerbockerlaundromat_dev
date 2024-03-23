@@ -16,8 +16,6 @@ const Area = ({ data }) => {
 
   const location = useLocation()
 
-  console.log(description, "description")
-
   const canonicalUrl = `https://saunderslaundromat.com${location.pathname}`
 
   return (

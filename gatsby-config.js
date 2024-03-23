@@ -1,12 +1,24 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Cosmetic & Implant Dentistry: Massapequa, NY.`,
+    image: "/image/share.png",
     author: `@gatsbyjs`,
+    siteUrl: `https://saunderslaundromat.com`,
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://saunderslaundromat.com",
+        sitemap: "https://saunderslaundromat.com/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
-
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -14,9 +26,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-strapi`,
       options: {

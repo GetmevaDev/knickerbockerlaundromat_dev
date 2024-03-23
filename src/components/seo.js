@@ -9,35 +9,39 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-import { useLocation } from '@reach/router';
+import { useLocation } from "@reach/router"
 
 function SEO({ description, lang, meta, title }) {
   const data = useStaticQuery(
     graphql`
       query {
-          strapiDescriptionSite {
-              Title
-              Description
-              Image {
-                  childImageSharp {
-                      fixed(width: 300) {
-                          ...GatsbyImageSharpFixed
-                      }
-                  }
+        strapiDescriptionSite {
+          Title
+          Description
+          Image {
+            childImageSharp {
+              fixed(width: 300) {
+                ...GatsbyImageSharpFixed
               }
+            }
           }
+        }
       }
     `
   )
 
-  const metaDescription = description || data?.strapiDescriptionSite?.Description
+  const metaDescription =
+    description || data?.strapiDescriptionSite?.Description
   const defaultTitle = data?.strapiDescriptionSite?.Title
-  const imageData = data?.strapiDescriptionSite?.Image && data.strapiDescriptionSite.Image !== null ?
-    data.strapiDescriptionSite.Image.childImageSharp.fixed.src : "";
+  const imageData =
+    data?.strapiDescriptionSite?.Image &&
+    data.strapiDescriptionSite.Image !== null
+      ? data.strapiDescriptionSite.Image.childImageSharp.fixed.src
+      : ""
 
-    const location = useLocation();
+  const location = useLocation()
 
-    const canonicalUrl = `https://saunderslaundromat.com${location.pathname}`;
+  const canonicalUrl = `https://saunderslaundromat.com${location.pathname}`
 
   return (
     <Helmet
@@ -47,9 +51,9 @@ function SEO({ description, lang, meta, title }) {
       }}
       link={[
         {
-          rel: 'canonical',
-          href: canonicalUrl
-        }
+          rel: "canonical",
+          href: canonicalUrl,
+        },
       ]}
       title={defaultTitle}
       titleTemplate={defaultTitle}
@@ -69,6 +73,10 @@ function SEO({ description, lang, meta, title }) {
         {
           property: `og:description`,
           content: metaDescription,
+        },
+        {
+          property: `og:url`,
+          content: canonicalUrl,
         },
         {
           property: `og:type`,
