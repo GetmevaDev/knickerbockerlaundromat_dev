@@ -30,7 +30,7 @@ module.exports = {
       resolve: `gatsby-source-strapi`,
       options: {
         apiURL: "https://cms-knick-dev-71b6bbdd3892.herokuapp.com",
-        // apiURL: "http://localhost:1337",
+        // apiURL: "http://localhost:1338",
         // apiURL: process.env.DEPLOY_URL
         //   ? "https://cms-knick.herokuapp.com"
         //   : "http://localhost:1337",

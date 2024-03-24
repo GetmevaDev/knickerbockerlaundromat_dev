@@ -6,11 +6,31 @@ import SEO from "../components/seo"
 
 import { Discount } from "../components/Discount/Discount"
 import "../scss/main.scss"
+import { graphql, useStaticQuery } from "gatsby"
 
 const IndexPage = () => {
+  const data = useStaticQuery(
+    graphql`
+      query SeoPickUp {
+        strapiPickUp {
+          seo {
+            metaTitle
+            metaImage {
+              nlink
+            }
+            metaDescription
+          }
+        }
+      }
+    `
+  )
+
   return (
     <Layout>
-      <SEO />
+      <SEO
+        title={data?.strapiPickUp?.seo?.metaTitle}
+        description={data?.strapiPickUp?.seo?.metaDescription}
+      />
       <SectionHeader />
       <Discount />
 

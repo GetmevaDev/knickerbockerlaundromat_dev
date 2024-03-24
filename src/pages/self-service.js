@@ -13,11 +13,31 @@ import "slick-carousel/slick/slick-theme.css"
 import "slick-carousel/slick/slick.css"
 import { Discount } from "../components/Discount/Discount"
 import SEO from "../components/seo"
+import { graphql, useStaticQuery } from "gatsby"
 
 const SelfService = () => {
+  const data = useStaticQuery(
+    graphql`
+      query SeoSelfService {
+        strapiPickUp {
+          seo {
+            metaTitle
+            metaImage {
+              nlink
+            }
+            metaDescription
+          }
+        }
+      }
+    `
+  )
+
   return (
     <Layout>
-      <SEO/>
+      <SEO
+        title={data?.strapiPickUp?.seo?.metaTitle}
+        description={data?.strapiPickUp?.seo?.metaDescription}
+      />
       <SimpleSlider />
       <Discount />
 

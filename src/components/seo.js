@@ -12,33 +12,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import { useLocation } from "@reach/router"
 
 function SEO({ description, lang, meta, title }) {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        strapiDescriptionSite {
-          Title
-          Description
-          Image {
-            childImageSharp {
-              fixed(width: 300) {
-                ...GatsbyImageSharpFixed
-              }
-            }
-          }
-        }
-      }
-    `
-  )
-
-  const metaDescription =
-    description || data?.strapiDescriptionSite?.Description
-  const defaultTitle = data?.strapiDescriptionSite?.Title
-  const imageData =
-    data?.strapiDescriptionSite?.Image &&
-    data.strapiDescriptionSite.Image !== null
-      ? data.strapiDescriptionSite.Image.childImageSharp.fixed.src
-      : ""
-
   const location = useLocation()
 
   const canonicalUrl = `https://saunderslaundromat.com${location.pathname}`
@@ -55,28 +28,24 @@ function SEO({ description, lang, meta, title }) {
           href: canonicalUrl,
         },
       ]}
-      title={defaultTitle}
-      titleTemplate={defaultTitle}
+      title={title}
+      titleTemplate={title}
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: description,
         },
         {
           property: `og:image`,
-          content: imageData,
+          content: "",
         },
         {
           property: `og:title`,
-          content: defaultTitle,
+          content: title,
         },
         {
           property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:url`,
-          content: canonicalUrl,
+          content: description,
         },
         {
           property: `og:type`,
@@ -88,15 +57,15 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           image: `twitter:image`,
-          content: imageData,
+          content: "",
         },
         {
           name: `twitter:title`,
-          content: defaultTitle,
+          content: title,
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
+          content: description,
         },
       ].concat(meta)}
     />

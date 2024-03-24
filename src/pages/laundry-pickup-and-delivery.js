@@ -7,10 +7,30 @@ import { ThingsToKnow } from "../components/ThingsToKnow/ThingsToKnow"
 import SectionHeaderLaundry from "../components/homePageComponents/sectionHeaderLaundry"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { graphql, useStaticQuery } from "gatsby"
 export default function PickUp() {
+  const data = useStaticQuery(
+    graphql`
+      query SeoPickUpAndDelivery {
+        strapiPickUp {
+          seo {
+            metaTitle
+            metaImage {
+              nlink
+            }
+            metaDescription
+          }
+        }
+      }
+    `
+  )
+
   return (
     <Layout>
-      <SEO/>
+      <SEO
+        title={data?.strapiPickUp?.seo?.metaTitle}
+        description={data?.strapiPickUp?.seo?.metaDescription}
+      />
       <SectionHeaderLaundry />
       <Discount />
       <Areas />
