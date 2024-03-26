@@ -19,24 +19,27 @@ const SelfService = () => {
   const data = useStaticQuery(
     graphql`
       query SeoSelfService {
-        strapiPickUp {
+        strapiSelfServicePage {
           seo {
+            metaDescription
             metaTitle
             metaImage {
-              nlink
+              url
             }
-            metaDescription
           }
         }
       }
     `
   )
 
+  console.log(data, "dta")
+
   return (
     <Layout>
       <SEO
-        title={data?.strapiPickUp?.seo?.metaTitle}
-        description={data?.strapiPickUp?.seo?.metaDescription}
+        title={data?.strapiSelfServicePage?.seo?.metaTitle}
+        description={data?.strapiSelfServicePage?.seo?.metaDescription}
+        image={data?.strapiSelfServicePage?.seo?.metaImage?.url}
       />
       <SimpleSlider />
       <Discount />

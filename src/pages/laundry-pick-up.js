@@ -15,15 +15,14 @@ const IndexPage = () => {
         strapiPickUp {
           seo {
             metaTitle
-            metaImage {
-              nlink
-            }
             metaDescription
           }
         }
       }
     `
   )
+
+  console.log(data, "data")
 
   return (
     <Layout>

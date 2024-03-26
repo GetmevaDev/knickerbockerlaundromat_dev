@@ -11,7 +11,7 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import { useLocation } from "@reach/router"
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, meta, image, title }) {
   const location = useLocation()
 
   const canonicalUrl = `https://saunderslaundromat.com${location.pathname}`
@@ -32,12 +32,19 @@ function SEO({ description, lang, meta, title }) {
       titleTemplate={title}
       meta={[
         {
+          name: "robots",
+          content:
+            "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+        },
+
+        {
           name: `description`,
           content: description,
         },
         {
           property: `og:image`,
-          content: "",
+          content:
+            "https://res.cloudinary.com/df5rxaf0s/image/upload/v1711284236/small_Saunders_Street_Laundromat_35493e9f59.png?87264.40000000596",
         },
         {
           property: `og:title`,
@@ -57,7 +64,8 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           image: `twitter:image`,
-          content: "",
+          content:
+            "https://res.cloudinary.com/df5rxaf0s/image/upload/v1711284236/small_Saunders_Street_Laundromat_35493e9f59.png?87264.40000000596",
         },
         {
           name: `twitter:title`,
