@@ -8,7 +8,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
 import { useLocation } from "@reach/router"
 
 function SEO({ description, lang, meta, image, title }) {
@@ -26,6 +25,50 @@ function SEO({ description, lang, meta, image, title }) {
         {
           rel: "canonical",
           href: canonicalUrl,
+        },
+      ]}
+      script={[
+        {
+          type: "application/ld+json",
+          innerHTML: `
+            {
+              "@context": "https://schema.org",
+              "@type": "DryCleaningOrLaundry",
+              "name": "Saunders Street Laundromat",
+              "image": "https://res.cloudinary.com/df5rxaf0s/image/upload/v1711284234/Saunders_Street_Laundromat_35493e9f59.png",
+              "@id": "",
+              "url": "https://saunderslaundromat.com/",
+              "telephone": "(917) 745-0286",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "6375 Saunders St.",
+                "addressLocality": "Queens",
+                "addressRegion": "NY",
+                "postalCode": "11374",
+                "addressCountry": "US"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 40.72920209999999,
+                "longitude": -73.8623069
+              },
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                  "Sunday"
+                ],
+                "opens": "07:00",
+                "closes": "22:00"
+              },
+              "sameAs": "https://saunderslaundromat.com/"
+            }
+          `,
         },
       ]}
       title={title}

@@ -23,23 +23,17 @@ const SelfService = () => {
           seo {
             metaDescription
             metaTitle
-            metaImage {
-              url
-            }
           }
         }
       }
     `
   )
 
-  console.log(data, "dta")
-
   return (
     <Layout>
       <SEO
         title={data?.strapiSelfServicePage?.seo?.metaTitle}
         description={data?.strapiSelfServicePage?.seo?.metaDescription}
-        image={data?.strapiSelfServicePage?.seo?.metaImage?.url}
       />
       <SimpleSlider />
       <Discount />
