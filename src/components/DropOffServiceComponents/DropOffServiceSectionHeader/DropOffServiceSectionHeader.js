@@ -24,7 +24,6 @@ const DropOffServiceSectionHeader = () =>{
     <section className={classes.sectionHeader_DropOffService} style={{
       background: `#3b4854 url("${data.strapiDropOffService.Background_Section_Header[0].url}")`,
     }}>
-      {console.log(data.strapiDropOffService.Background_Section_Header)}
       <div className={`container ${classes.w900}`}>
         <h2>{data.strapiDropOffService.Title && data.strapiDropOffService.Title !== null ?
           data.strapiDropOffService.Title : null

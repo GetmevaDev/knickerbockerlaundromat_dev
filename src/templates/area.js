@@ -6,20 +6,33 @@ import TextBlock from "../components/AreaPageComponents/TextBlock/TextBlock"
 import WhySaunders from "../components/AreaPageComponents/WhySaunders/WhySaunders"
 import VisitUs from "../components/AreaPageComponents/VisitUs/VisitUs"
 import { Helmet } from "react-helmet"
+import { useLocation } from "@reach/router"
 
 const Area = ({ data }) => {
-  const area = data.strapiAreas
-  const title = area.SEO?.metaTitle
-  const description = area.SEO?.metaDescription
-  const image = area.SEO?.metImage?.publicURL
+  const area = data?.strapiAreas
+  const title = area?.SEO?.metaTitle
+  const description = area?.SEO?.metaDescription
+  const image = area?.SEO?.metaImage?.publicURL
+
+  const location = useLocation()
+
+  const canonicalUrl = `https://saunderslaundromat.com${location.pathname}`
 
   return (
     <Layout>
       <Helmet
+        defer={false}
+        link={[
+          {
+            rel: "canonical",
+            href: canonicalUrl,
+          },
+        ]}
         title={title}
+        titleTemplate={title}
         meta={[
           {
-            property: "description",
+            name: `description`,
             content: description,
           },
           {

@@ -12,10 +12,29 @@ import Layout from "../components/layout"
 import "slick-carousel/slick/slick-theme.css"
 import "slick-carousel/slick/slick.css"
 import { Discount } from "../components/Discount/Discount"
+import SEO from "../components/seo"
+import { graphql, useStaticQuery } from "gatsby"
 
 const SelfService = () => {
+  const data = useStaticQuery(
+    graphql`
+      query SeoSelfService {
+        strapiSelfServicePage {
+          seo {
+            metaDescription
+            metaTitle
+          }
+        }
+      }
+    `
+  )
+
   return (
     <Layout>
+      <SEO
+        title={data?.strapiSelfServicePage?.seo?.metaTitle}
+        description={data?.strapiSelfServicePage?.seo?.metaDescription}
+      />
       <SimpleSlider />
       <Discount />
 

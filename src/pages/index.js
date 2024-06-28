@@ -8,11 +8,28 @@ import SEO from "../components/seo"
 
 import { Discount } from "../components/Discount/Discount"
 import "../scss/main.scss"
+import { graphql, useStaticQuery } from "gatsby"
 
 const IndexPage = () => {
+  const data = useStaticQuery(
+    graphql`
+      query Seo {
+        strapiHomePage {
+          seo {
+            metaTitle
+            metaDescription
+          }
+        }
+      }
+    `
+  )
+
   return (
     <Layout>
-      <SEO />
+      <SEO
+        title={data?.strapiHomePage?.seo?.metaTitle}
+        description={data?.strapiHomePage?.seo?.metaDescription}
+      />
       <SectionHeader />
       <SectionContacts />
       <Discount />

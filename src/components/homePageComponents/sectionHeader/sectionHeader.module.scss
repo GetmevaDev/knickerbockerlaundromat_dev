@@ -1,14 +1,13 @@
 @import "./src/scss/utils/vars";
 @import "src/scss/utils/mixins";
 
-
-.section-header{
+.section-header {
   height: 100vh;
   background-repeat: no-repeat !important;
   background-size: cover !important;
   background-position-x: 72% !important;
-  &::before{
-    content: '';
+  &::before {
+    content: "";
     position: absolute;
     display: inline-block;
     width: 100%;
@@ -17,7 +16,7 @@
     top: 0;
     left: 0;
   }
-  .row{
+  .row {
     display: flex;
     width: 100%;
     height: 100vh;
@@ -25,28 +24,28 @@
     padding: 0 5px;
     margin: -6em auto;
 
-     @include mediaWidth_624{
-        margin:  auto;
-        flex-direction: column;
-        height: 60%;
-        justify-content: space-around;
-        row-gap: 16px;
-     }
+    @include mediaWidth_624 {
+      margin: auto;
+      flex-direction: column;
+      height: 60%;
+      justify-content: space-around;
+      row-gap: 16px;
+    }
   }
 
   .left {
     width: 50%;
     .video {
       border-radius: 20px;
-      width: 95%;  
+      width: 95%;
     }
 
-     @include mediaWidth_624{
+    @include mediaWidth_624 {
       width: 100%;
       display: flex;
       justify-content: center;
       order: 1;
-     }
+    }
   }
 
   .right {
@@ -54,46 +53,45 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    
-     @include mediaWidth_624{
+
+    @include mediaWidth_624 {
       width: 100%;
       order: 0;
-     }
+    }
   }
 
-  h3, h2, h4{
+  .title,
+  .pre,
+  .sub {
     color: #fff;
     text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
-
   }
-  h3{
+  .pre {
     font-family: $headingFonts;
     font-weight: 700;
     font-size: 55px;
     line-height: 50px;
-    @include mediaWidth_624{
+    @include mediaWidth_624 {
       font-size: 8vw;
       line-height: 7vw;
     }
-
   }
-  h2{
+  .title {
     font-family: $headingFonts;
     font-weight: 700;
     font-size: 88px;
     line-height: 80px;
-    @include mediaWidth_624{
+    @include mediaWidth_624 {
       font-size: 15vw;
       line-height: 14vw;
     }
   }
-  h4{
+  .sub {
     font-weight: 400;
-    font-size:  50px;
-    @include mediaWidth_624{
+    font-size: 50px;
+    @include mediaWidth_624 {
       font-size: 8vw;
       line-height: 7vw;
     }
   }
-
 }

@@ -24,9 +24,6 @@ const Offer = () => {
       }
     }
   `)
-
-  console.log("datacard", data)
-
   return (
     <div className={classes.container}>
       <div data-aos="fade-up" className={classes.offer}>

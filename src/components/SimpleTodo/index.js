@@ -25,7 +25,6 @@ const SimpleTodo = () => {
     }
   `)
 
-  console.log("data", data)
 
   return (
     <section

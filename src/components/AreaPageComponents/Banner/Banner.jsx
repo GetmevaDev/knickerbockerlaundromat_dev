@@ -8,7 +8,7 @@ const Banner = ({ title, subtitle, imgUrl }) => {
       className={styles.wrapper}
       style={{ backgroundImage: `url(${imgUrl})` }}
     >
-      <h1>
+      <h1> 
         {subtitle}
         {`\n${title}`}
       </h1>

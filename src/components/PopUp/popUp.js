@@ -29,9 +29,7 @@ export function PopUp() {
     MaxWidthBlock,
   } = data.strapiPopUpWarning
 
-  const [cleanPopUp, setCleanPopUp] = useLocalStorage("PopUpOff", true, {
-    syncData: true,
-  })
+  const [cleanPopUp, setCleanPopUp] = useLocalStorage("PopUpOff", true)
 
   const removeCard = () => {
     setCleanPopUp(!cleanPopUp)
